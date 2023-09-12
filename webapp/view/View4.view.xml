@@ -1,0 +1,65 @@
+<mvc:View
+    controllerName="itiproject.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+>
+    <Page
+        id="page1"
+        title="{i18n>title}"
+    >
+         <content >
+	 <VBox >
+	<Text text="סכום כל המוצרים בהצעה זו {NewBid>/totalSum}" class="product"/>
+  <Table id="productsTable"
+				   sticky="ColumnHeaders,HeaderToolbar"
+				   inset="false"
+				   growing="true"
+				   items="{NewBid>/Data}"
+				   class="productsTable"
+				   width="auto">
+				<headerToolbar>
+					<OverflowToolbar>
+					<Title text="Your New Bid"/>
+						<ToolbarSpacer/>
+						
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="ZprodNumber" />
+					</Column>
+					<Column >
+							<Text text="ZprodDescription"/>
+						</Column>
+					<Column >
+						<Text text="ZprodPriceIti" />
+					</Column>
+					
+				</columns>
+				
+
+				<items>
+					<ColumnListItem type="Navigation" press="onListItemPress" vAlign="Middle">
+						<cells>
+							<ObjectNumber number="{NewBid>ZprodNumberIti}"  />
+							<ObjectIdentifier text="{NewBid>ZprodDescriptionIti}" />
+	                        <ObjectNumber number="{NewBid>ZprodPriceIti}" />
+							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+
+			<HBox class="centered-buttons">
+	         <Button  press="moveToSecScreen3" text=" חזור "></Button>
+        <Button  press="saveNewBid" text=" שמור הצעה חדשה "></Button>
+			   </HBox>
+	</VBox>
+	 
+        </content>
+    </Page>
+</mvc:View>
+
+

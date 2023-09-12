@@ -1,0 +1,111 @@
+<mvc:View
+    controllerName="itiproject.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+>
+    <Page
+        id="page1"
+        title="{i18n>title}"
+    >
+        <content>
+           	
+	 <mvc:View displayBlock="true" controllerName="sap.m.TableScrollToIndex.controller.Master" height="100%"
+	  xmlns="sap.m"
+	  xmlns:f="sap.f"
+	  xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId"
+				   toggleHeaderOnTitleClick="false">
+		
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+				<VBox>
+					<Title text="Products In Bid Num {ProductsDetails>/Data/0/ZbidNumberIti} " class="product"/>
+					<HBox>
+					<Text text="סכום כל המוצרים בהצעה זו {ProductsDetails>/totalSum}" class="customTitle"/>
+					</HBox>
+					</VBox>
+				</f:heading>
+				     
+			</f:DynamicPageTitle>
+		</f:title>
+				
+		<!-- DynamicPage Content -->
+		<f:content>
+		<VBox>
+			<Table id="productsTable"
+				  
+				   inset="false"
+				   growing="true"
+				   items="{ProductsDetails>/Data}"
+				   class="productsTable"
+				   width="auto">
+				<headerToolbar>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="BID NUMBER" />
+					</Column>
+					<Column >
+							<Text text="PROD NUMBER"/>
+						</Column>
+					<Column >
+						<Text text="DESCRIPTION" />
+					</Column>
+					<Column	>
+						<Text text="PRICE PER ONE" />
+					</Column>
+					<Column	>
+						<Text text="Zamount" />
+					</Column>
+					<Column	>
+						<Text text="DATE" />
+					</Column>
+					<Column	>
+						<Text text="TOTAL_PRICE" />
+					</Column>
+					<Column	>
+					</Column>	
+				</columns>
+				<items>
+					<ColumnListItem  press="onListItemPress" vAlign="Middle">
+						<cells>
+							<ObjectNumber number="{ProductsDetails>ZbidNumberIti}"  />
+							<ObjectNumber number="{ProductsDetails>ZdetailsBidProdNumberIti}" />
+							<ObjectIdentifier text="{ProductsDetails>Zdescription}" />
+							<ObjectNumber	number="{ProductsDetails>ZpricePerOne}" />
+							<Input value="{ProductsDetails>Zamount}" liveChange="onAmountChange" />
+							<ObjectIdentifier	text="{ProductsDetails>Zdate}" />
+							<ObjectIdentifier	text="{ProductsDetails>ZtotalPrice}" />
+                            <Button press="deleteLine" text="Delete"  />
+
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<HBox class="centered-buttons">
+               <Button press="moveToSecScreen" text="מעבר לדף מוצרים"></Button>
+               <Button press="SaveChanges" text="שמור שינויים בהצעה"    />
+			   </HBox>
+			   </VBox>
+		</f:content>
+		
+		<!-- DynamicPage Footer -->
+		<f:footer>
+			
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>
+
+	
+              
+        </content>
+    </Page>
+</mvc:View>
+

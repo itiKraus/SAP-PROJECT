@@ -1,0 +1,170 @@
+<mvc:View
+    controllerName="itiproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+       
+        
+            <f:DynamicPage
+                id="dynamicPageId"
+                toggleHeaderOnTitleClick="false"
+            >
+                <!-- DynamicPage Title -->
+                <f:title>
+                    <f:DynamicPageTitle>
+                        <f:heading>
+                            <Title
+                                text="Products {BidModel>/TOTAL_PRICE}"
+                                class="product"
+                            />
+                        </f:heading>
+                    </f:DynamicPageTitle>
+                </f:title>
+
+                <!-- DynamicPage Content -->
+               
+                  <f:content>
+                    <HBox >
+                <VBox class="vbox">
+               
+                
+               <!-- <VBox> -->
+                    <!-- <core:Fragment fragmentName="sap.m.BusyIndicator" type="XML" id="busyIndicator" /> -->
+                    <!-- <VBox id= "busyIndicator1">
+                        <Button  id="busyIndicator" text=" אנא המתן בעת טעינת המערכת"/>
+                        </VBox> -->
+                        <VBox id="allView">
+                        <Table
+                            id="productsTable"
+                            sticky="ColumnHeaders,HeaderToolbar"
+                            inset="false"
+                            growing="true"
+                            items="{BidModel>/Data}"
+                            class="productsTable"
+                            width="auto"
+                        >
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <ToolbarSpacer />
+                                      <Text text="בחר מספר הצעה כדי לצפות במוצרים שבהצעה זו" class="title"/>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <Text text="BID NUMBER" />
+                                </Column>
+                                <Column>
+                                    <Text text="TOTAL PRICE" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem
+                                    type="Navigation"
+                                    press="onListItemPress"
+                                    vAlign="Middle"
+                                >
+                                    <cells>
+                                        <ObjectNumber
+                                            number="{BidModel>ZbidNumberIti}"
+                                        />
+                                        <ObjectNumber
+                                            number="{BidModel>ZbidPriceIti}"
+                                        />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+
+                        </VBox>
+                 </VBox>  
+                  <VBox class="vbox">
+
+          <!-- <Text text="דף VIEW 2"/> -->
+            		<VBox>
+			<Table id="productsTable1"
+				  
+				   inset="false"
+				   growing="true"
+				   items="{ProductsDetails>/Data}"
+				   class="productsTable"
+				   width="auto">
+				<headerToolbar>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						   <Text text="מוצרים בהצעה מספר {ProductsDetails>/Data/0/ZbidNumberIti}" class="title"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<!-- <Column>
+						<Text text="BID NUMBER" />
+					</Column> -->
+					<Column >
+							<Text text="PROD NUMBER"/>
+						</Column>
+					<Column >
+						<Text text="DESCRIPTION" />
+					</Column>
+					<Column	>
+						<Text text="PRICE PER ONE" />
+					</Column>
+					<!-- <Column	>
+						<Text text="Zamount" />
+					</Column> -->
+					<!-- <Column	>
+						<Text text="DATE" />
+					</Column> -->
+					<!-- <Column	>
+						<Text text="TOTAL_PRICE" />
+					</Column> -->
+					<!-- <Column	>
+					</Column>	 -->
+				</columns>
+				<items>
+					<ColumnListItem  press="onListItemPress" vAlign="Middle">
+						<cells>
+							<!-- <ObjectNumber number="{ProductsDetails>ZbidNumberIti}"  /> -->
+							<ObjectNumber number="{ProductsDetails>ZdetailsBidProdNumberIti}" />
+							<ObjectIdentifier text="{ProductsDetails>Zdescription}" />
+							<ObjectNumber	number="{ProductsDetails>ZpricePerOne}" />
+							<!-- <Input value="{ProductsDetails>Zamount}" liveChange="onAmountChange" />
+							<ObjectIdentifier	text="{ProductsDetails>Zdate}" />
+							<ObjectIdentifier	text="{ProductsDetails>ZtotalPrice}" />
+                            <Button press="deleteLine" text="Delete"  /> -->
+
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<HBox class="centered-buttons">
+               <Button press="moveToSecondScreen" text="מעבר לצפייה במוצרים"></Button>
+               <!-- <Button press="SaveChanges" text="שמור שינויים בהצעה"    /> -->
+			   </HBox>
+			   </VBox>
+             </VBox>
+            </HBox>
+                </f:content>
+
+   
+           
+                <f:footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                    </OverflowToolbar>
+                </f:footer>
+            </f:DynamicPage>
+          
+           
+        
+        </content>
+    </Page>
+</mvc:View>
+
+

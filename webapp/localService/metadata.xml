@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZTEST_ITI_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="add_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZbidNumberIti"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidPriceIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BID_PRICE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="add_details_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZbidNumberIti"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZdetailsBidProdNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdescription" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="description_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpricePerOne" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zamount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="amount_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="prod_date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZtotalPrice" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="total price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="save_chngees_details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZbidNumberIti"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidPriceIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BID_PRICE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZdetailsBidProdNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdescription" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="description_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpricePerOne" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zamount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="amount_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="prod_date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZtotalPrice" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="total price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="aad_prod_to_details_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IvBidNumber"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="number of product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodDescriptionIti" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="prod_desctiption" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodPriceIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodIsExistsIti" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="IsExists_product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IvBidNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="create_new_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZprodNumberIt"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodNumberIt" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="number of product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodDescriptionIti" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="prod_desctiption" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodPriceIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodIsExistsIti" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="IsExists_product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="get_by_bid_number" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IvBidNumber"/>
+                </Key>
+                <Property Name="IvBidNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZdetailsBidProdNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdescription" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="description_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpricePerOne" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zamount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="amount_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="prod_date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZtotalPrice" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="total price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EvTotalSum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="total sum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="create_product" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZprodNumberIti"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="number of product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodDescriptionIti" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="prod_desctiption" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodPriceIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodIsExistsIti" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="IsExists_product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="get_all_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IvDummy"/>
+                </Key>
+                <Property Name="IvDummy" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="IV_DUMMY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandt" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidPriceIti" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="BID_PRICE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="get_all_products" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZprodNumberIt"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodNumberIt" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="number of product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodDescriptionIti" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="prod_desctiption" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodPriceIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZprodIsExistsIti" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="IsExists_product" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="details_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zdescription"/>
+                </Key>
+                <Property Name="IvBidNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZdetailsBidProdNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdescription" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="description_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpricePerOne" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zamount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="amount_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="prod_date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZtotalPrice" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="total price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="zdelete_prod_from_bid" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DetailsNumber"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DetailsNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DetailsDescription" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="description_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DetailsPrice" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="prod_price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DetailsAmount" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="amount_prod" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DetailsDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="prod_date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DetailsTotalLine" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="total price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZbidNumberIti" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NUMBER_BID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZtotalSum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BID_PRICE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZTEST_ITI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="add_bidSet" EntityType="ZTEST_ITI_SRV.add_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="add_details_bidSet" EntityType="ZTEST_ITI_SRV.add_details_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="save_chngees_detailsSet" EntityType="ZTEST_ITI_SRV.save_chngees_details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="aad_prod_to_details_bidSet" EntityType="ZTEST_ITI_SRV.aad_prod_to_details_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="create_new_bidSet" EntityType="ZTEST_ITI_SRV.create_new_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="get_by_bid_numberSet" EntityType="ZTEST_ITI_SRV.get_by_bid_number" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="create_productSet" EntityType="ZTEST_ITI_SRV.create_product" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="get_all_bidSet" EntityType="ZTEST_ITI_SRV.get_all_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="get_all_productsSet" EntityType="ZTEST_ITI_SRV.get_all_products" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="details_bidSet" EntityType="ZTEST_ITI_SRV.details_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="zdelete_prod_from_bidSet" EntityType="ZTEST_ITI_SRV.zdelete_prod_from_bid" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://vhcalnplci.dummy.nodomain:8000/sap/opu/odata/sap/ZTEST_ITI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://vhcalnplci.dummy.nodomain:8000/sap/opu/odata/sap/ZTEST_ITI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

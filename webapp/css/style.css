@@ -1,0 +1,116 @@
+@import "sap/ui/core/themes/sap_belize/library";
+.vbox{
+  width: 50%;
+  margin: 10px;
+}
+
+.customTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  /* עיצוב כפתורים */
+.sapMBtn {
+  background-color: #f06170; /* צבע רקע */
+  color: white; /* צבע טקסט */
+  border: none;
+  padding: 10px 20px; /* מרווחים בתוך הכפתור */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Comic Sans MS';
+  font-size: 16px;
+  font-weight: bold; /* גופן מודגש */
+  border-radius: 4px; /* חיתוך פינות */
+  cursor: pointer;
+  margin: 3%;
+}
+.product{
+  font-size: 50px;
+  font-weight: bold;
+  color: #bf2626; /* צבע אדום */
+  text-align: center; /* מרכז את הטקסט */
+  margin-bottom: 8px;
+  /* ניתן להוסיף עיצוב נוסף כפי שאתה רוצה */
+}
+.title{
+  font-size: 20px;
+}
+#busyIndicator1{
+  margin: 50% ,50%;
+
+}
+.productsTable {
+  font-family: fontProject;
+  width: 100%;
+  border-collapse: collapse;
+}
+.productsTable1 {
+  font-family: fontProject;
+  width: 100%;
+  border-collapse: collapse;
+}
+.productsTable th, .productsTable td {
+  border: 1px solid #bf2626;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.productsTable th {
+  background-color: #bf2626;
+}
+
+/* עיצוב של התאים בטבלה */
+.productsTable .sapMListTblCell, .productsTable .sapMListTblHdrCell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* עיצוב ה-DynamicPage */
+.sapFDynamicPageTitleMainInner {
+  padding: 1rem;
+ 
+}
+
+/* עיצוב הכותרת ב-DynamicPage */
+.sapFDynamicPageTitleMainHeading {
+  font-size: 1.5px;
+
+  
+}
+
+/* עיצוב העמוד כולו */
+.mvcView {
+  padding: 1px;
+}
+.sapMLIBPressed:active {
+  background-color: #bf2626; /* צבע רקע בעת העכבר מעל הכפתור */
+  color: rgb(21, 15, 15); /* צבע טקסט בעת העכבר מעל הכפתור */
+}
+.myCustomFont {
+  font-family: 'fontProject', 'Comic Sans MS'; /* שם הגופן שאתה מעוניין להשתמש בו */
+}
+
+
+
+.centered-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* ניתן לשנות את המרווח מלמעלה כפי שתרצה */
+}
+
+
+
+.application-project1-display-component---View2--productsTable-tblHeadNav{
+visibility: hidden;
+}
+.sapFDynamicPageTitleWrapper {
+  position: absolute;
+  padding:0%;
+  
+  z-index: 2;
+}

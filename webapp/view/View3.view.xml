@@ -1,0 +1,76 @@
+<mvc:View
+    controllerName="itiproject.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+>
+    <Page
+        id="page1"
+        title="{i18n>title}"
+    >
+        <content>
+           	
+	
+		 
+   <Table id="productsTable"
+				   sticky="ColumnHeaders,HeaderToolbar"
+				   inset="false"
+				   growing="true"
+				   items="{ProductsInStore>/Data}"
+				   class="productsTable"
+				   width="auto">
+				<headerToolbar>
+					<OverflowToolbar>
+					<Title text="Products " class="product"/>
+						<ToolbarSpacer/>
+						
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+				<Column>
+				<!-- checkbox -->
+              		</Column>
+					<Column>
+						<Text text="ZprodNumber" />
+					</Column>
+					<Column >
+							<Text text="ZprodDescription"/>
+						</Column>
+					<Column >
+						<Text text="ZprodPrice" />
+					</Column>
+					<Column	>
+						<Text text="ZprodIsExists" />
+					</Column>
+					<Column> 
+					<!-- כפתור -->
+					</Column>
+				</columns>
+				
+
+				<items>
+					<ColumnListItem type="Navigation" press="onListItemPress" vAlign="Middle">
+						<cells>
+						<CheckBox id="idCheckBox" selected="false" select="onCheckBoxSelect" />
+							<ObjectNumber number="{ProductsInStore>ZprodNumberIti}"  />
+							<ObjectIdentifier text="{ProductsInStore>ZprodDescriptionIti}" />
+	                        <ObjectNumber number="{ProductsInStore>ZprodPriceIti}" />
+							<ObjectIdentifier text="{ProductsInStore>ZprodIsExistsIti}" />
+                            <Button press="AddForBag" text="הוסף לסל" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<VBox >
+			<HBox class="centered-buttons">
+	         <Button  press="moveToSecScreen" text=" חזור "></Button>
+		    <Button  press="moveToSecScreen4" text=" יצירת הצעת מחיר"></Button>
+
+			   </HBox>
+	</VBox>
+        </content>
+    </Page>
+</mvc:View>
+
+
